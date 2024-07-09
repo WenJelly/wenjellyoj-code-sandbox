@@ -86,8 +86,9 @@ public abstract class JavaCodeSandBoxTemplate implements CodeSandBox {
      * @return
      */
     public File savaCodeToFile(String code) {
-        // 获取用户当前的根目录
+        // 获取用户当前的根目录 记住，不要有空格，不然编译时会报错，找不到文件路径
         String userDir = System.getProperty("user.dir");
+//        String userDir = "D:/Development";
         String globalCodePathName = userDir + File.separator + GLOBAL_CODE_DIR_NAME;
         // 判断全局代码目录是否存在
         if (!FileUtil.exist(globalCodePathName)) {
